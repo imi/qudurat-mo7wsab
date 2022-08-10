@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>حل الاختبار</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../general.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer type="module" src="script.js"></script>
+    <script>
+      let mins = parseInt(localStorage.getItem("mins"));
+      if (isNaN(mins)) location.replace("../../index.html");
+    </script>
+  </head>
+  <body class="bg-[rgb(230,230,230)] font-[Arial] overflow-hidden">
+    <!-- Navigator -->
+    <nav class=" text-white">
+      <div class="flex flex-row-reverse justify-between align-items-center w-100 p-1 px-3 bg-[#3577AB]">
+        <h1 class="text-2xl">اختبار القدرات العامة</h1>
+        <div class="flex flex-col">
+          <p>الوقت المتبقي: <span id="timer"></span><i class="bi bi-clock px-1"></i></p>
+          <p class="text-start">عدد الاسئلة: <span id="qremain"></span><i class="bi bi-box-arrow-left px-1"></i></p>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="p-2 bg-[#8BB5DE] text-end">
+        <p>سؤال رقم: <span id="qnumber"></span></p>
+      </div>
+      <!-- Confirm -->
+      <div id="modal" class="absolute top-0 bottom-0 right-0 left-0 flex align-items-center justify-content-center bg-[rgba(30,30,30,.5)] z-10 d-none">
+        <div id="inner-modal" class="bg-white text-end text-black rounded-1 px-3 py-2">
+          <h1 class="text-3xl fw-bold">تأكيد الانهاء</h1>
+          <hr>
+          <p class="text-2xl text-secondary mt-2">هل انت متأكد من انهاء الاختبار ؟</p>
+          <div class="text-start mt-3">
+            <button id="closeModal" class="rounded-1 bg-[rgb(70,100,70)] px-4 text-white">لا</button>
+            <button id="showResult" class="rounded-1 bg-[rgb(70,100,200)] px-4 text-white">نعم</button>
+          </div>
+        </div>
+      </div>
+      <!-- Spinner Circle -->
+      <div id="spinner" class="absolute top-0 bottom-0 right-0 left-0 flex align-items-center justify-content-center">
+        <div class="spinner-border">
+          <div class="sr-only">Hello</div>
+        </div>
+      </div>
+      <!-- Test View -->
+      <section id="testview" class="d-none">
+        <div class="row flex-row-reverse m-0 h-[81vh]">   
+          <div class="col-12 col-md-6 overflow-x-auto flex flex-col gap-y-3 h-[50%] overflow-auto md:border-l-[#4F82A8] md:border-l-4 p-2 md:h-[100%]">
+            <div class="text-end text-2xl" id="qtitle"></div>
+            <img class="mx-auto w-100" id="qimg" alt="">
+            <div class="flex flex-col gap-y-1 align-items-end mr-5" id="qanswers">
+            </div>
+          </div>
+          <div id="qpara" class="col-12 col-md-6 text-[18px] text-center overflow-auto h-[36%] md:border-r-[#4F82A8] md:border-r-4 p-3 md:h-[100%]">
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="flex p-2 pl-3 absolute bottom-0 left-0 right-0 bg-[#2E76A1] text-white text-[19px]">
+        <button id="next" class="px-3 border-[1px] border-white"><span class="bi bi-arrow-left"></span> التالي</button>
+        <button id="before" class="px-3 border-[1px] border-white">السابق <span class="bi bi-arrow-right"></span></button>
+      </footer>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</html>

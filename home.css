@@ -1,0 +1,11 @@
+.cimg {
+    background-image: url("https://www.onlygfx.com/wp-content/uploads/2021/07/cartoon-cloud-sky-background-1.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cimg div.container {
+    height: 88vh;
+}
